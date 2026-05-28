@@ -14,9 +14,11 @@ import styles from './kpi-dashboard-card.module.css';
 interface KpiDashboardCardProps {
   kpi: KpiItem;
   role: UserRole;
+  onEdit?: (kpi: KpiItem) => void;
+  onDelete?: (kpi: KpiItem) => void;
 }
 
-export default function KpiDashboardCard({ kpi, role }: KpiDashboardCardProps) {
+export default function KpiDashboardCard({ kpi, role, onEdit, onDelete }: KpiDashboardCardProps) {
   const percentage = getAchievementRate(kpi);
   const daysLeft = getDaysLeft(kpi.deadline);
   const isAdmin = role === 'DASIG_ADMIN';
@@ -28,7 +30,7 @@ export default function KpiDashboardCard({ kpi, role }: KpiDashboardCardProps) {
           <h3 className={styles.title}>{kpi.name}</h3>
           <p className={styles.description}>{kpi.description}</p>
         </div>
-        {isAdmin && <KpiAdminActions />}
+        {isAdmin && <KpiAdminActions onEdit={() => onEdit?.(kpi)} onDelete={() => onDelete?.(kpi)} />}
       </div>
 
       <div className={styles.metrics}>

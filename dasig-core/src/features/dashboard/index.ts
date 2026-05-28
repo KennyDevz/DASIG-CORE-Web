@@ -11,6 +11,8 @@ export { default as KpiProgressBar } from './components/kpi-progress-bar';
 export { default as KpiStatusBadge } from './components/kpi-status-badge';
 export { default as KpiAdminActions } from './components/kpi-admin-actions';
 export { default as SubmitProgressLink } from './components/submit-progress-link';
+export { default as KpiModal } from './components/kpi-modal';
+export { default as KpiDeleteModal } from './components/kpi-delete-modal';
 
 export * from './types/dashboard.types';
 export * from './data/mock-dashboard-data';
