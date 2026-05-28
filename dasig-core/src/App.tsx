@@ -6,6 +6,7 @@ import RoleBasedDashboardPage from './features/dashboard/pages/role-based-dashbo
 import PlaceholderPage from './features/dashboard/pages/placeholder-page';
 import KpiSubmissionPage from './features/kpi-submission/pages/kpi-submission-page';
 import TbiSubmissionHistoryPage from './features/submission-history/pages/tbi-submission-history-page';
+import StaffSubmissionHistoryPage from './features/submission-history/pages/staff-submission-history-page';
 import type { UserRole } from './features/dashboard/types/dashboard.types';
 
 function AssignedKpisPage({ role }: { role: UserRole }) {
@@ -21,6 +22,10 @@ function AssignedKpisPage({ role }: { role: UserRole }) {
 function SubmissionHistoryPage({ role }: { role: UserRole }) {
   if (role === 'TBI_MANAGER') {
     return <TbiSubmissionHistoryPage />;
+  }
+
+  if (role === 'STAFF') {
+    return <StaffSubmissionHistoryPage />;
   }
 
   return (
