@@ -1,0 +1,10 @@
+.banner {
+  display: inline-block;
+  margin: 0;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #495057;
+  font-weight: 500;
+  background-color: #f1f3f5;
+  border-radius: 999px;
+}

@@ -1,0 +1,28 @@
+.toggle {
+  display: inline-flex;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  
+  overflow: hidden;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  background-color: #ffffff;
+  color: #495057;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #f8f9fa;
+}
+
+.active {
+  background-color: #e8f0fe;
+  color: #3b71ca;
+  font-weight: 600;
+}

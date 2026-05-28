@@ -1,0 +1,62 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input,
+.select,
+.dateInput {
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #495057;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.input:focus,
+.select:focus,
+.dateInput:focus {
+  border-color: #3b71ca;
+}
+
+.select {
+  min-width: 160px;
+}
+
+.select:disabled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.dateInput {
+  min-width: 140px;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .bar {
+    flex-direction: column;
+  }
+
+  .input,
+  .select,
+  .dateInput {
+    width: 100%;
+    min-width: 0;
+  }
+}

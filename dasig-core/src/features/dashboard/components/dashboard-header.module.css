@@ -1,0 +1,28 @@
+.header {
+  margin-bottom: 4px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #212529;
+  letter-spacing: -0.5px;
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+}
