@@ -1,15 +1,29 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import './App.css'
+import './App.css';
 
-import LoginForm from './authentication/login-form'
-import AdminDashboardLayout from './layouts/admin-layout';
+import LoginForm from './authentication/login-form';
+import RoleBasedDashboardPage from './features/dashboard/pages/role-based-dashboard-page';
+import PlaceholderPage from './features/dashboard/pages/placeholder-page';
+import KpiSubmissionPage from './features/kpi-submission/pages/kpi-submission-page';
+import type { UserRole } from './features/dashboard/types/dashboard.types';
 
-function AdminDashboardHome() {
+function AssignedKpisPage({ role }: { role: UserRole }) {
   return (
-    <div>
-      <h1 style={{ marginTop: 0, color: '#212529' }}>Admin Dashboard Overview</h1>
-      <p style={{ color: '#495057' }}>Welcome back! This is your primary dashboard pane.</p>
-    </div>
+    <PlaceholderPage
+      role={role}
+      title="Assigned KPIs"
+      description="Table view of all KPIs assigned to your organization."
+    />
+  );
+}
+
+function SubmissionHistoryPage({ role }: { role: UserRole }) {
+  return (
+    <PlaceholderPage
+      role={role}
+      title="Submission History"
+      description="Past KPI submissions for your organization."
+    />
   );
 }
 
@@ -17,21 +31,23 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Route 1: Auth Screen (Takes up 100% of the screen space) */}
         <Route path="/" element={<LoginForm />} />
 
-        {/* Route 2: Dashboard App Section (Includes the Sidebar layout wrapper) */}
-        <Route 
-          path="/dashboard" 
-          element={
-            <AdminDashboardLayout>
-              <AdminDashboardHome />
-            </AdminDashboardLayout>
-          } 
-        />
+        <Route path="/dashboard" element={<Navigate to="/dashboard/admin" replace />} />
 
-        {/* Catch-all: Redirect users to login by default if path is unknown */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="/dashboard/admin" element={<RoleBasedDashboardPage role="DASIG_ADMIN" />} />
+
+        <Route path="/dashboard/tbi/submit/:kpiId?" element={<KpiSubmissionPage role="TBI_MANAGER" />} />
+        <Route path="/dashboard/tbi/assigned" element={<AssignedKpisPage role="TBI_MANAGER" />} />
+        <Route path="/dashboard/tbi/history" element={<SubmissionHistoryPage role="TBI_MANAGER" />} />
+        <Route path="/dashboard/tbi" element={<RoleBasedDashboardPage role="TBI_MANAGER" />} />
+
+        <Route path="/dashboard/staff/submit/:kpiId?" element={<KpiSubmissionPage role="STAFF" />} />
+        <Route path="/dashboard/staff/assigned" element={<AssignedKpisPage role="STAFF" />} />
+        <Route path="/dashboard/staff/history" element={<SubmissionHistoryPage role="STAFF" />} />
+        <Route path="/dashboard/staff" element={<RoleBasedDashboardPage role="STAFF" />} />
+
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

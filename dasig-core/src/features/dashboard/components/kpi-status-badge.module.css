@@ -1,0 +1,23 @@
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.onTrack {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.delayed {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.atRisk {
+  background-color: #fff3cd;
+  color: #664d03;
+}

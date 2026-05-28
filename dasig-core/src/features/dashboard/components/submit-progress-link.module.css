@@ -1,0 +1,15 @@
+.link {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #3b71ca;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
