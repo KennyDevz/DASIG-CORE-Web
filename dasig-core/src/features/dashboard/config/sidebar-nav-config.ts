@@ -3,6 +3,7 @@ import type { UserRole } from '../types/dashboard.types';
 export interface SidebarNavItem {
   key: string;
   label: string;
+  section?: string;
 }
 
 export const sidebarNavByRole: Record<UserRole, SidebarNavItem[]> = {
@@ -15,14 +16,14 @@ export const sidebarNavByRole: Record<UserRole, SidebarNavItem[]> = {
   TBI_MANAGER: [
     { key: 'dashboard', label: 'TBI Dashboard' },
     { key: 'assigned', label: 'Assigned KPIs' },
+    { key: 'history', label: 'Submission History' },
     { key: 'submit', label: 'Submit KPI' },
-    { key: 'history', label: 'Submissions' },
   ],
   STAFF: [
-    { key: 'dashboard', label: 'Staff Dashboard' },
-    { key: 'assigned', label: 'Assigned KPIs' },
-    { key: 'submit', label: 'Submit KPI' },
-    { key: 'history', label: 'Submission History' },
+    { key: 'dashboard', label: 'Staff Dashboard', section: 'Main Menu' },
+    { key: 'assigned', label: 'Assigned KPIs', section: 'Main Menu' },
+    { key: 'history', label: 'Submission History', section: 'My Workspace' },
+    { key: 'submit', label: 'Submit KPI', section: 'My Workspace' },
   ],
 };
 

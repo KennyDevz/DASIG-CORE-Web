@@ -1,0 +1,86 @@
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: #868e96;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f3f5;
+  color: #212529;
+  vertical-align: middle;
+}
+
+.row {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.row:hover {
+  background-color: #f8f9fa;
+}
+
+.rowSelected {
+  background-color: #eef4ff;
+}
+
+.rowSelected:hover {
+  background-color: #e3ecfd;
+}
+
+.idCell {
+  font-weight: 600;
+  color: #3b71ca;
+  white-space: nowrap;
+}
+
+.kpiCell {
+  font-weight: 500;
+  max-width: 220px;
+  line-height: 1.4;
+}
+
+.valueCell {
+  font-weight: 600;
+}
+
+.targetCell {
+  color: #6c757d;
+}
+
+.dateCell {
+  color: #495057;
+  white-space: nowrap;
+}
+
+.empty {
+  margin: 0;
+  padding: 48px 24px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 14px;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+}

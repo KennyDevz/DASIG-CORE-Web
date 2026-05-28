@@ -7,10 +7,16 @@ import styles from './dashboard-shell.module.css';
 interface DashboardShellProps {
   role: UserRole;
   kpiCount?: number;
+  navBadges?: Partial<Record<string, number>>;
   children: ReactNode;
 }
 
-export default function DashboardShell({ role, kpiCount = 0, children }: DashboardShellProps) {
+export default function DashboardShell({
+  role,
+  kpiCount = 0,
+  navBadges,
+  children,
+}: DashboardShellProps) {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -28,6 +34,7 @@ export default function DashboardShell({ role, kpiCount = 0, children }: Dashboa
       <DashboardSidebar
         role={role}
         kpiCount={kpiCount}
+        navBadges={navBadges}
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
         onLogout={() => navigate('/')}
