@@ -1,0 +1,16 @@
+.wrapper {
+  margin: 20px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.link {
+  color: #3b71ca;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
